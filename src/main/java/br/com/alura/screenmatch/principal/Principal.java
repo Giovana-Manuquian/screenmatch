@@ -9,10 +9,7 @@ import br.com.alura.screenmatch.service.ConverteDados;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Principal {
@@ -45,9 +42,14 @@ public class Principal {
 
         System.out.println("\nTop 5 episodios");
         dadosEpisodios.stream()
-                        .sorted(Comparator.comparing(DadosEpisodio::avaliacao).reversed())
                         .filter(e -> !e.avaliacao().equalsIgnoreCase("N/A"))
+                        .peek(e -> System.out.println("Primeiro filtros(N/A" + e))
+                        .sorted(Comparator.comparing(DadosEpisodio::avaliacao).reversed())
+                        .peek(e -> System.out.println("Ordenação " + e))
                         .limit(5)
+                        .peek(e -> System.out.println("Limite " + e))
+                        .map(e-> e.titulo().toUpperCase())
+                        .peek(e -> System.out.println("Mapeamento " + e))
                         .forEach(System.out::println);
 
         List<Episodio> episodios = temporadas.stream()
