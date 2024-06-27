@@ -58,6 +58,7 @@ public class Principal {
     private void buscarSerieWeb() {
         DadosSerie dados = getDadosSerie();
         dadosSeries.add(dados);
+
         System.out.println(dados);
     }
 
