@@ -25,7 +25,7 @@ public class SerieController {
     }
 
     @GetMapping("/inicio")
-    private String retornarInico(){
+    public String retornarInico(){
         return "Bem vindo(a) ao Screenmatch!";
     }
 }
