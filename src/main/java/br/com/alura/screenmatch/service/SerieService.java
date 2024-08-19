@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -32,4 +33,9 @@ public class SerieService {
     public List<SerieDTO> obterLancamentos() {
         return converteDados(repositorio.findTop5ByOrderByEpisodiosDataLancamentoDesc());
     }
+
+   /* public SerieDTO obterPorId(Long id) {
+        Optional<Serie> serie = repositorio.findById(id);
+
+    }*/
 }
