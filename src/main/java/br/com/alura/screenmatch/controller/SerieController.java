@@ -32,8 +32,8 @@ public class SerieController {
         return servico.obterLancamentos();
     }
 
-  /*  @GetMapping("/{id}")
+    @GetMapping("/{id}")
     public SerieDTO obterPorId(@PathVariable Long id) {
         return servico.obterPorId(id);
-    }*/
+    }
 }
