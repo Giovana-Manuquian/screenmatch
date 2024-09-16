@@ -21,6 +21,7 @@ public class Serie {
     private String atores;
     private String poster;
     private String sinopse;
+    private String imagemPaisagem;
 
     @OneToMany(mappedBy = "serie", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Episodio> episodios = new ArrayList<>();
@@ -102,6 +103,13 @@ public class Serie {
         this.poster = poster;
     }
 
+    public String getImagemPaisagem() {
+        return imagemPaisagem;
+    }
+
+    public void setImagemPaisagem(String imagemPaisagem) {
+        this.imagemPaisagem = imagemPaisagem;
+    }
     public String getSinopse() {
         return sinopse;
     }
